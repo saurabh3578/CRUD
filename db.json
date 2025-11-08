@@ -2,11 +2,8 @@
   "Users": [
     {
       "id": "1",
-      "name": "John Doe",
-      "email": "john.doe@example.com",
-      "age": 28,
-      "role": "Admin",
-      "isActive": true
+      "name": "John Cena",
+      "email": "john.cena@example.com"
     },
     {
       "id": "2",
