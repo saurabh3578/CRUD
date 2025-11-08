@@ -7,7 +7,7 @@ const Home = () => {
     const navigate=useNavigate()
 
     const fetchUser = async () => {
-        const response = await axios("http://localhost:8000/Users")
+        const response = await axios.get("http://localhost:8000/Users")
         setUserList(response.data)
     }
 
