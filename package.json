@@ -1,0 +1,28 @@
+{
+  "name": "git-practice",
+  "version": "1.0.0",
+  "description": "Hi This is CRUD operation project\r Auther: Saurabh Tapkir",
+  "scripts": {
+    "start": "parcel index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saurabh3578/CRUD.git"
+  },
+  "author": "Saurabh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saurabh3578/CRUD/issues"
+  },
+  "homepage": "https://github.com/saurabh3578/CRUD#readme",
+  "devDependencies": {
+    "parcel": "^2.16.1"
+  },
+  "dependencies": {
+    "axios": "^1.13.2",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "6.23"
+  }
+}
