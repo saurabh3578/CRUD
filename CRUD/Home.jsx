@@ -1,8 +1,10 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom/dist"
 
 const Home = () => {
     const [userList, setUserList] = useState([])
+    const navigate=useNavigate()
 
     const fetchUser = async () => {
         const response = await axios("http://localhost:8000/Users")
@@ -13,11 +15,22 @@ const Home = () => {
         fetchUser()
     }, [])
 
-    console.log(userList)
+    const handleDelete=(id)=>{
+        fetch("http://localhost:8000/Users/"+id, {
+            method:"DELETE"
+        })
+        .then(()=>{
+            alert("User Deleted Successfully")
+            fetchUser()
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+    }
 
     return (
         <div>
-            <button>Create</button>
+            <button onClick={()=>navigate("/create")}>Create</button>
             <table>
                 <thead>
                     <tr>
@@ -35,9 +48,9 @@ const Home = () => {
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
                                 <td>
-                                    <button>View</button>
-                                    <button>Update</button>
-                                    <button>Delete</button>
+                                    <button onClick={()=>navigate("/view/"+user.id)}>View</button>
+                                    <button onClick={()=>navigate("/update/"+user.id)}>Update</button>
+                                    <button onClick={()=>handleDelete(user.id)}>Delete</button>
                                 </td>
                             </tr>
                         ))
